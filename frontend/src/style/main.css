@@ -1,0 +1,169 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ===== BACKGROUND CORE ===== */
+body {
+  min-height: 100vh;
+  color: #e6edf3;
+  background:
+    radial-gradient(600px circle at 15% 20%, rgba(56, 189, 248, 0.25), transparent 40%),
+    radial-gradient(500px circle at 80% 70%, rgba(168, 85, 247, 0.25), transparent 45%),
+    linear-gradient(135deg, #0b1020, #0f172a 60%, #020617);
+  overflow-x: hidden;
+}
+
+/* ===== FLOATING GLOW ORBS ===== */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: -1;
+  opacity: 0.55;
+  animation: float 18s infinite alternate ease-in-out;
+}
+
+body::before {
+  background: #22d3ee;
+  top: -120px;
+  left: -120px;
+}
+
+body::after {
+  background: #a855f7;
+  bottom: -140px;
+  right: -140px;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  from { transform: translateY(0) translateX(0); }
+  to { transform: translateY(-60px) translateX(40px); }
+}
+
+/* ===== TECH GRID (VERY SUBTLE) ===== */
+html::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ===== NAVBAR (GLASS EFFECT) ===== */
+.navbar {
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(12px);
+  padding: 16px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar a {
+  color: #e6edf3;
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: 500;
+  transition: color .2s;
+}
+
+.navbar a:hover {
+  color: #38bdf8;
+}
+
+/* ===== FORMS (GLASS CARD) ===== */
+form {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(16px);
+  padding: 36px;
+  border-radius: 18px;
+  width: 400px;
+  margin: 90px auto;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form h2 {
+  margin-bottom: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ===== INPUTS ===== */
+input {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: #e6edf3;
+  outline: none;
+  font-size: 14px;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+input:focus {
+  outline: 2px solid rgba(56, 189, 248, 0.5);
+}
+
+
+/* user csustom */
+
+.user-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 0 12px rgba(168,85,247,0.6);
+}
+
+.user-name {
+  font-weight: 500;
+  color: #e6edf3;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #e6edf3;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.logout-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
