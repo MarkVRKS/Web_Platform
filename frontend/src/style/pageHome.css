@@ -1,0 +1,20 @@
+.pageHome {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.pageHome h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.pageHome p {
+  max-width: 420px;
+  color: #cbd5f5;
+  font-size: 16px;
+}
